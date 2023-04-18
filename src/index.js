@@ -10,6 +10,7 @@ const countryInfoEl = document.querySelector(".country-info");
 const handleSearchCountry = async (event) => {
   const searchQuery = event.target.value.trim();
   countryListEl.innerHTML = "";
+  countryInfoEl.innerHTML = "";
 
   if (searchQuery !== "") {
     try {
@@ -51,6 +52,7 @@ const handleSearchCountry = async (event) => {
       }
     } catch (error) {
       Notiflix.Notify.failure("Oops, there is no country with that name");
+      searchBoxEl.value = '';
     }
   }
 };
